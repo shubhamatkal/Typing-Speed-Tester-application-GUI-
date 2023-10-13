@@ -46,6 +46,15 @@ start_test = Button(window, text="Start Test", font='Verdana\ Pro 15', borderwid
 start_test.grid(row=3, column=1, pady=10)
 
 
+#add exit button 
+exit = Button(window,
+            text= 'Exit',
+            font= 'Verdana\ Pro 15',
+            borderwidth= 3,
+            bg= 'lightblue1', fg= 'black')
+exit.grid(row = 4, column = 1)
+
+
 
 
 
