@@ -1,5 +1,18 @@
 #imports
 from tkinter import *
+from resources import paragraphs as p
+
+#getting hold of paragraph topic and paragraph
+
+#converting to list
+topic_list =  list(p.indian_mythology_paragraphs.keys())
+para_list =  list(p.indian_mythology_paragraphs.values())
+
+TOPIC =  topic_list[0]
+PARAGRAPH = para_list[0]
+
+
+
 
 #creating tkinter window
 window = Tk()
@@ -23,7 +36,7 @@ backward = Button(window,
                   font='Helvetica 20',
                   )
 
-para_title = Label(window, fg='black', bg='white', text="self.topic.get()", font='Helvetica 22')
+para_title = Label(window, fg='black', bg='white', text=TOPIC, font='Helvetica 22')
 
 forward = Button(window,
                  text='>>',
@@ -36,7 +49,7 @@ forward.grid(row=1, column=2, pady=(35))
 
 
 #adding paragraph
-place_holder = Message(window, text="This is sample text and sdjrfuas ashdufhui fhefh fuahusdf huiadshf hsdiuhfusda fihasdf sdhfu ", fg='black', bg='ivory3', width=1000, justify='center',
+place_holder = Message(window, text=PARAGRAPH, fg='black', bg='ivory3', width=1000, justify='center',
                        font='Verdana\ Pro 18')
 place_holder.grid(row=2, column=0, columnspan=3)
 
