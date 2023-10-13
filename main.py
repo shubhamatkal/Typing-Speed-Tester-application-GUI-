@@ -35,6 +35,11 @@ para_title.grid(row=1, column=1, pady=35)
 forward.grid(row=1, column=2, pady=(35))
 
 
+#adding paragraph
+place_holder = Message(window, text="This is sample text and sdjrfuas ashdufhui fhefh fuahusdf huiadshf hsdiuhfusda fihasdf sdhfu ", fg='black', bg='ivory3', width=1000, justify='center',
+                       font='Verdana\ Pro 18')
+place_holder.grid(row=2, column=0, columnspan=3)
+
 
 
 
