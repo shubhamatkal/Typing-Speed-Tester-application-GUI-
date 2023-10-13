@@ -40,6 +40,11 @@ place_holder = Message(window, text="This is sample text and sdjrfuas ashdufhui 
                        font='Verdana\ Pro 18')
 place_holder.grid(row=2, column=0, columnspan=3)
 
+# add start button
+start_test = Button(window, text="Start Test", font='Verdana\ Pro 15', borderwidth=3, bg='lightblue1',
+                    fg='black')
+start_test.grid(row=3, column=1, pady=10)
+
 
 
 
