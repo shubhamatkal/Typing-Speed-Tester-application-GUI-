@@ -10,16 +10,15 @@ para_list =  list(p.indian_mythology_paragraphs.values())
 
 TOPIC =  topic_list[0]
 PARAGRAPH = para_list[0]
+topic_index = 0
 
 #TODO ===== DEFINING SOME FUNCTIONS =============================
 def go_forward():
-    global TOPIC
-    global PARAGRAPH
-    current_index = topic_list.index(TOPIC)
-    next_index = current_index + 1
-    TOPIC = topic_list[next_index]
-    PARAGRAPH = para_list[next_index]
-    print(TOPIC)
+    #change the para_title label
+    global topic_index
+    topic_index += 1
+    para_title.configure(text=topic_list[topic_index])
+    paragraph.configure(text=para_list[topic_index])
 
 #creating tkinter window
 window = Tk()
@@ -43,7 +42,7 @@ backward = Button(window,
                   font='Helvetica 20',
                   )
 
-para_title = Label(window, fg='black', bg='white', text=TOPIC, font='Helvetica 22')
+para_title = Label(window, fg='black', bg='white', text=topic_list[0], font='Helvetica 22')
 
 forward = Button(window,
                  text='>>',
@@ -56,9 +55,9 @@ forward.grid(row=1, column=2, pady=(35))
 
 
 #adding paragraph
-place_holder = Message(window, text=PARAGRAPH, fg='black', bg='ivory3', width=1000, justify='center',
+paragraph = Message(window, text=para_list[topic_index], fg='black', bg='ivory3', width=1000, justify='center',
                        font='Verdana\ Pro 18')
-place_holder.grid(row=2, column=0, columnspan=3)
+paragraph.grid(row=2, column=0, columnspan=3)
 
 # add start button
 start_test = Button(window, text="Start Test", font='Verdana\ Pro 15', borderwidth=3, bg='lightblue1',
