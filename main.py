@@ -40,6 +40,29 @@ window.geometry("1345x680")
 window.title("Typing Speed And Accuracy Test")
 window.configure(bg = "azure2")
 
+def clear_frame():
+    for wid in window.winfo_children():
+        wid.destroy()
+def start_typing():
+    clear_frame()
+    t_title = Label(window, fg='black', bg='white', text="test",
+                  font='Lucida\ Console 26 underline')
+    t_title.grid(row=0, column=0, columnspan=1, pady=50)
+
+    # global time_count
+    # time_count = Label(window, fg='red', bg='skyblue1', text='00:00', font='Lucida\ Console 22 bold')
+    # time_count.grid(row=0, column=2, pady=50)
+    #
+    # place_holder = Message(window, text=self.paragraph, fg='black', bg='ivory3', width=1000,
+    #                        justify='center', font='Verdana\ Pro 18')
+    # place_holder.grid(row=2, column=0, columnspan=3, padx=80, pady=40)
+    #
+    # self.user_input = Text(window, width=80, height=10, bg='floral white', fg='black',
+    #                        insertbackground='green', borderwidth=5, relief=RAISED, padx=5, pady=5,
+    #                        font='Verdana\ Pro 16')
+    #
+    # self.user_input.grid(row=3, column=0, columnspan=3, padx=30)
+
 #TODO Home page for application ================================
 #heading label
 header = Label(window,
@@ -76,7 +99,7 @@ paragraph.grid(row=2, column=0, columnspan=3)
 
 # add start button
 start_test = Button(window, text="Start Test", font='Verdana\ Pro 15', borderwidth=3, bg='lightblue1',
-                    fg='black')
+                    fg='black', command=start_typing)
 start_test.grid(row=3, column=1, pady=10)
 
 
