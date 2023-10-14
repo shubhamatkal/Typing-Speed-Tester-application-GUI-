@@ -22,6 +22,16 @@ def go_forward():
     para_title.configure(text=topic_list[topic_index % number_of_paragraphs])
     paragraph.configure(text=para_list[topic_index % number_of_paragraphs])
 
+def go_backwards():
+    global topic_index
+    global number_of_paragraphs
+    if topic_index == 0:
+        topic_index = 10
+    else:
+        topic_index -= 1
+    para_title.configure(text=topic_list[topic_index])
+    paragraph.configure(text=para_list[topic_index])
+
 #creating tkinter window
 window = Tk()
 window.geometry("1345x680")
@@ -42,6 +52,7 @@ backward = Button(window,
                   text='<<',
                   bg='lightblue1', fg='black',
                   font='Helvetica 20',
+                  command= go_backwards
                   )
 
 para_title = Label(window, fg='black', bg='white', text=topic_list[0], font='Helvetica 22')
