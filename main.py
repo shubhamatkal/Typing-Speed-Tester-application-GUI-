@@ -32,6 +32,8 @@ def go_backwards():
     para_title.configure(text=topic_list[topic_index])
     paragraph.configure(text=para_list[topic_index])
 
+def exit():
+    window.quit()
 #creating tkinter window
 window = Tk()
 window.geometry("1345x680")
@@ -83,7 +85,7 @@ exit = Button(window,
             text= 'Exit',
             font= 'Verdana\ Pro 15',
             borderwidth= 3,
-            bg= 'lightblue1', fg= 'black')
+            bg= 'lightblue1', fg= 'black', command=exit)
 exit.grid(row = 4, column = 1)
 
 
@@ -91,4 +93,5 @@ exit.grid(row = 4, column = 1)
 
 
 #end code
+
 window.mainloop()
