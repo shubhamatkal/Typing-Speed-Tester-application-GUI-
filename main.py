@@ -11,14 +11,16 @@ para_list =  list(p.indian_mythology_paragraphs.values())
 TOPIC =  topic_list[0]
 PARAGRAPH = para_list[0]
 topic_index = 0
+number_of_paragraphs = 11
 
 #TODO ===== DEFINING SOME FUNCTIONS =============================
 def go_forward():
     #change the para_title label
     global topic_index
+    global number_of_paragraphs
     topic_index += 1
-    para_title.configure(text=topic_list[topic_index])
-    paragraph.configure(text=para_list[topic_index])
+    para_title.configure(text=topic_list[topic_index % number_of_paragraphs])
+    paragraph.configure(text=para_list[topic_index % number_of_paragraphs])
 
 #creating tkinter window
 window = Tk()
