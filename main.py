@@ -45,7 +45,7 @@ def clear_frame():
         wid.destroy()
 def start_typing():
     clear_frame()
-    t_title = Label(window, fg='black', bg='white', text="HEADING",
+    t_title = Label(window, fg='black', bg='white', text=topic_list[topic_index],
                   font='Lucida\ Console 26 underline')
     t_title.grid(row=0, column=0, columnspan=1, pady=50)
 
