@@ -45,23 +45,26 @@ def clear_frame():
         wid.destroy()
 def start_typing():
     clear_frame()
-    t_title = Label(window, fg='black', bg='white', text="test",
+    t_title = Label(window, fg='black', bg='white', text="HEADING",
                   font='Lucida\ Console 26 underline')
     t_title.grid(row=0, column=0, columnspan=1, pady=50)
 
-    # global time_count
-    # time_count = Label(window, fg='red', bg='skyblue1', text='00:00', font='Lucida\ Console 22 bold')
-    # time_count.grid(row=0, column=2, pady=50)
+    time_count = Label(window, fg='red', bg='skyblue1', text='00:00', font='Lucida\ Console 22 bold')
+    time_count.grid(row=0, column=1, pady=50)
     #
-    # place_holder = Message(window, text=self.paragraph, fg='black', bg='ivory3', width=1000,
-    #                        justify='center', font='Verdana\ Pro 18')
-    # place_holder.grid(row=2, column=0, columnspan=3, padx=80, pady=40)
+    text_box = Message(window, text="self.paragraph", fg='black', bg='ivory3', width=1000,
+                           justify='center', font='Verdana\ Pro 18')
+    text_box.grid(row=1, column=0, columnspan=2, padx=80, pady=40)
     #
-    # self.user_input = Text(window, width=80, height=10, bg='floral white', fg='black',
-    #                        insertbackground='green', borderwidth=5, relief=RAISED, padx=5, pady=5,
-    #                        font='Verdana\ Pro 16')
-    #
-    # self.user_input.grid(row=3, column=0, columnspan=3, padx=30)
+    user_input = Text(window, width=80, height=10, bg='floral white', fg='black',
+                           insertbackground='green', borderwidth=5, relief=RAISED, padx=5, pady=5,
+                           font='Verdana\ Pro 16')
+
+    user_input.grid(row=2, column=0, columnspan=2, padx=30)
+
+    #submit button
+    submit = Button(window, text="SUBMIT", font='Verdana\ Pro 16')
+    submit.grid(column=0, columnspan=2, row=3, pady=30)
 
 #TODO Home page for application ================================
 #heading label
