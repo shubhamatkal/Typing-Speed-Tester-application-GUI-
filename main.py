@@ -12,6 +12,7 @@ TOPIC =  topic_list[0]
 PARAGRAPH = para_list[0]
 topic_index = 0
 number_of_paragraphs = 11
+seconds_ = 0
 
 #TODO ===== DEFINING SOME FUNCTIONS =============================
 def go_forward():
@@ -43,13 +44,28 @@ window.configure(bg = "azure2")
 def clear_frame():
     for wid in window.winfo_children():
         wid.destroy()
+
+def update_timer():
+    global seconds_
+    seconds_ += 1
+    
+
+
+
+def start_timer():
+    global seconds_
+    seconds_ = 0
+    update_timer()
+
 def start_typing():
     clear_frame()
+    start_timer()
     t_title = Label(window, fg='black', bg='white', text=topic_list[topic_index],
                   font='Lucida\ Console 26 underline')
     t_title.grid(row=0, column=0, columnspan=1, pady=50)
 
-    time_count = Label(window, fg='red', bg='skyblue1', text='00:00', font='Lucida\ Console 22 bold')
+    global seconds_
+    time_count = Label(window, fg='red', bg='skyblue1', text=f'sec: {seconds_}', font='Lucida\ Console 22 bold')
     time_count.grid(row=0, column=1, pady=50)
     #
     text_box = Message(window, text=para_list[topic_index], fg='black', bg='ivory3', width=1000,
